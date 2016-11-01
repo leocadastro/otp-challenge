@@ -24,7 +24,7 @@ namespace Shopomo.OTP.Infra.IoC
 
             //Services
             container.Register(typeof(IServiceBase<>), typeof(ServiceBase<>));
-            container.Register<IUserService, IUserService>();
+            container.Register<IUserService, UserService>();
 
             //Applications
             container.Register(typeof(IAppServiceBase<>), typeof(AppServiceBase<>));

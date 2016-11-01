@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\UserConfiguration.cs" />
     <Compile Include="Context\ShopomoContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,9 +60,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configuration\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Shopomo.OTP.Domain\Shopomo.OTP.Domain.csproj">
       <Project>{1dcaeb5b-5e03-48b3-8626-946d0f7691c3}</Project>

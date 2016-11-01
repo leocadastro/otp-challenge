@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shopomo.OTP.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -16,6 +17,8 @@ namespace Shopomo.OTP.Infra.Data.Context
             Configuration.LazyLoadingEnabled = true;
             Configuration.ProxyCreationEnabled = true;
         }
+
+        public DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
