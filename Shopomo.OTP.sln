@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{B7B95BEC-112F-4789-8E1B-27243E1033CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{A53324C0-42CD-4122-AF3D-3C6A99889267}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{89A90DFA-7A65-4F50-98A8-6374FF0C7A40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{30D95040-4402-40ED-97FA-5F0EDFFF1075}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Test", "5 - Test", "{A699E3FF-38CD-49EC-99C9-3961C91A50C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{3EE65C28-D498-41C0-B248-B88F88A415DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{D9EB274F-C8F3-4F1C-B10D-2468B5F0F2C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopomo.OTP.Domain", "Shopomo.OTP.Domain\Shopomo.OTP.Domain.csproj", "{1DCAEB5B-5E03-48B3-8626-946D0F7691C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopomo.OTP.Infra.Data", "Shopomo.OTP.Infra.Data\Shopomo.OTP.Infra.Data.csproj", "{BEC6E4FB-EBB6-41C4-9FE5-6570B69637E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopomo.OTP.Infra.IoC", "Shopomo.OTP.Infra.IoC\Shopomo.OTP.Infra.IoC.csproj", "{56027722-EFE5-414F-AE1D-032EA65F288F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopomo.Application", "Shopomo.Application\Shopomo.Application.csproj", "{78F3B759-5A73-4C0D-B6D0-0A1C357A5B37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DCAEB5B-5E03-48B3-8626-946D0F7691C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DCAEB5B-5E03-48B3-8626-946D0F7691C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DCAEB5B-5E03-48B3-8626-946D0F7691C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DCAEB5B-5E03-48B3-8626-946D0F7691C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEC6E4FB-EBB6-41C4-9FE5-6570B69637E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEC6E4FB-EBB6-41C4-9FE5-6570B69637E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEC6E4FB-EBB6-41C4-9FE5-6570B69637E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEC6E4FB-EBB6-41C4-9FE5-6570B69637E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56027722-EFE5-414F-AE1D-032EA65F288F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56027722-EFE5-414F-AE1D-032EA65F288F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56027722-EFE5-414F-AE1D-032EA65F288F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56027722-EFE5-414F-AE1D-032EA65F288F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78F3B759-5A73-4C0D-B6D0-0A1C357A5B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78F3B759-5A73-4C0D-B6D0-0A1C357A5B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78F3B759-5A73-4C0D-B6D0-0A1C357A5B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78F3B759-5A73-4C0D-B6D0-0A1C357A5B37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3EE65C28-D498-41C0-B248-B88F88A415DC} = {30D95040-4402-40ED-97FA-5F0EDFFF1075}
+		{D9EB274F-C8F3-4F1C-B10D-2468B5F0F2C4} = {30D95040-4402-40ED-97FA-5F0EDFFF1075}
+		{1DCAEB5B-5E03-48B3-8626-946D0F7691C3} = {89A90DFA-7A65-4F50-98A8-6374FF0C7A40}
+		{BEC6E4FB-EBB6-41C4-9FE5-6570B69637E8} = {3EE65C28-D498-41C0-B248-B88F88A415DC}
+		{56027722-EFE5-414F-AE1D-032EA65F288F} = {D9EB274F-C8F3-4F1C-B10D-2468B5F0F2C4}
+		{78F3B759-5A73-4C0D-B6D0-0A1C357A5B37} = {A53324C0-42CD-4122-AF3D-3C6A99889267}
+	EndGlobalSection
+EndGlobal
