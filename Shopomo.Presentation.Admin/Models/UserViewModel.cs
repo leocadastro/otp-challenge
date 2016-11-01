@@ -8,6 +8,7 @@ namespace Shopomo.Presentation.Admin.Models
 {
     public class UserViewModel
     {
+        [Key]
         public int UserId { get; set; }
         [StringLength(400)]
         public string Name { get; set; }
