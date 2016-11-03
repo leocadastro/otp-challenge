@@ -22,12 +22,53 @@ namespace Shopomo.Presentation.Admin.Controllers
         }
 
         // GET: User
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Create(UserViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            try
+            {
+                var user = Mapper.Map<UserViewModel, User>(model);
+                var result = await _userService.AddAsync(user);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> GetAll()
         {
             var users = await _userService.GetAllAsync();
             var usersViewModel = Mapper.Map<IEnumerable<User>, IEnumerable<UserViewModel>>(users);
 
-            return View(usersViewModel);
+            return Json(usersViewModel, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Delete(int userId)
+        {
+            var user = await _userService.GetByIdAsync(userId);
+
+            var result = await _userService.RemoveAsync(user);
+
+            return result == 1 ? Json(true, JsonRequestBehavior.AllowGet) : Json(false, JsonRequestBehavior.AllowGet);
+
         }
     }
 }

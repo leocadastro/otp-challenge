@@ -1,39 +1,38 @@
-﻿@model IEnumerable<Shopomo.Presentation.Admin.Models.UserViewModel>
-
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewBag.Title = "Users";
 }
 
-<h2>Index</h2>
+@section scripts
+{
+    <script src="~/Scripts/Pages/Controllers/userController.js"></script>
+}
+
+<h2>Users</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "User")" class="btn btn-success btn-sm">Create New</a>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
-        </td>
-    </tr>
-}
-
-</table>
+<div ng-controller="userController">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{ user.UserId }}</td>
+                <td>{{ user.Email }}</td>
+                <td>{{ user.Name}}</td>
+                <td>
+                    <button ng-click="generatePassword(user.UserId)" class="btn btn-primary btn-sm">Generate Password</button>
+                    <button ng-click="delete(user.UserId)" class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

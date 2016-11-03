@@ -10,9 +10,14 @@ namespace Shopomo.Presentation.Admin.Models
     {
         [Key]
         public int UserId { get; set; }
+
+        [Required]
         [StringLength(400)]
         public string Name { get; set; }
+
+        [Required]
         [StringLength(400)]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
     }
 }
