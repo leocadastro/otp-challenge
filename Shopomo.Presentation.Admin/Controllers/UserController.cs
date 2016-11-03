@@ -41,9 +41,19 @@ namespace Shopomo.Presentation.Admin.Controllers
             try
             {
                 var user = Mapper.Map<UserViewModel, User>(model);
-                var result = await _userService.AddAsync(user);
+                var userBd = await _userService.GetByEmailAsync(user.Email);
+                if (userBd == null)
+                {
+                    var result = await _userService.AddAsync(user);
 
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.Error = "Email já existe";
+                    return View(model);
+                }
+                
             }
             catch (Exception ex)
             {

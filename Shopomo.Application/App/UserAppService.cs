@@ -18,5 +18,10 @@ namespace Shopomo.Application.App
         {
             _userService = userService;
         }
+
+        public async Task<User> GetByEmailAsync(string email)
+        {
+            return await _userService.GetByEmailAsync(email);
+        }
     }
 }

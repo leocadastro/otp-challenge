@@ -1,6 +1,9 @@
 ﻿using Shopomo.OTP.Domain.Entities;
 using Shopomo.OTP.Domain.Interfaces.Repositories;
 using Shopomo.OTP.Infra.Data.Context;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Shopomo.OTP.Infra.Data.Repositories
 {
@@ -10,6 +13,11 @@ namespace Shopomo.OTP.Infra.Data.Repositories
             : base(dbContext)
         {
 
+        }
+
+        public async Task<User> GetByEmailAsync(string email)
+        {
+            return await _dbContext.User.FirstOrDefaultAsync(x=>x.Email == email);
         }
     }
 }

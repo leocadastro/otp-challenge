@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Shopomo.Application.Interfaces
 {
-    public interface IUserAppService : IAppServiceBase<User>
+    public interface ILoginAppService
     {
-        Task<User> GetByEmailAsync(string email);
+        string GenerateOTP(string userId, DateTime time);
+        bool AuthenticateOTP(string userId, DateTime time, string password);
     }
 }

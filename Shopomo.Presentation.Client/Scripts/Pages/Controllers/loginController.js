@@ -4,7 +4,6 @@ app.controller('loginController', function ($scope, $http) {
     $scope.form = {};
 
     $scope.submit = function () {
-        console.log("teste");
         $http({
             method: 'POST',
             url: '/Login/Authenticate',
