@@ -20,12 +20,15 @@
                 url: '/User/Delete',
                 data: { userId: userId }
             }).then(function success(response) {
-                if (response.data == 1)
+                if (response.data == 1){
                     listUsers();
-                else
-                    console.log("erro ao remover");
+                    toastr.success('User deleted with success!', 'Congratulations')
+                }
+                else {
+                    toastr.error('Something was wrong.', 'Error!')
+                }
             }, function error(response) {
-                console.log("erro");
+                toastr.error('Something was wrong.', 'Error!')
             });
         } 
     }

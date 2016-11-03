@@ -9,4 +9,6 @@
 /// <reference path="pages/app.js" />
 /// <reference path="pages/controllers/logincontroller.js" />
 /// <reference path="pages/controllers/usercontroller.js" />
+/// <reference path="pages/main.js" />
 /// <reference path="respond.js" />
+/// <reference path="toastr.min.js" />

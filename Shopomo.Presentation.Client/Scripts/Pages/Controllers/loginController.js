@@ -11,10 +11,11 @@ app.controller('loginController', function ($scope, $http, $location) {
             data: { loginViewModel: $scope.form }
         }).then(function success(response) {
             if (response.data == true) {
-                console.log("logou");
+                toastr.success('Authenticated with success', 'Congratulations!')
+                $scope.form = {};
             }
             else {
-                console.log("nao logou");
+                toastr.error('Email or Password is not valid.', 'Problem on Login!')
             }
 
         }, function error(response) {
