@@ -16,6 +16,8 @@ namespace Shopomo.Presentation.Admin.AutoMapper
             {
                 x.CreateMap<User, UserViewModel>();
                 x.CreateMap<UserViewModel, User>();
+                x.CreateMap<LogAccess, LogAccessViewModel>();
+                x.CreateMap<LogAccessViewModel, LogAccess>();
             });
         }
     }

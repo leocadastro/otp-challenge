@@ -1,4 +1,5 @@
 ﻿using Shopomo.OTP.Domain.Entities;
+using Shopomo.OTP.Infra.Data.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -19,6 +20,7 @@ namespace Shopomo.OTP.Infra.Data.Context
         }
 
         public DbSet<User> User { get; set; }
+        public DbSet<LogAccess> LogAccess { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -28,7 +30,8 @@ namespace Shopomo.OTP.Infra.Data.Context
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            //modelBuilder.Configurations.Add(new ProcessoConfiguration());
+            modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new LogAccessConfiguration());
         }
 
         public override int SaveChanges()

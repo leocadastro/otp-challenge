@@ -22,17 +22,19 @@ namespace Shopomo.OTP.Infra.IoC
             container.Register(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
             container.Register<IUserRepository, UserRepository>();
             container.Register<ILoginRepository, LoginRepository>();
+            container.Register<ILogAccessRepository, LogAccessrRepository>();
 
             //Services
             container.Register(typeof(IServiceBase<>), typeof(ServiceBase<>));
             container.Register<IUserService, UserService>();
             container.Register<ILoginService, LoginService>();
+            container.Register<ILogAccessService, LogAccessService>();
 
             //Applications
             container.Register(typeof(IAppServiceBase<>), typeof(AppServiceBase<>));
             container.Register<IUserAppService, UserAppService>();
             container.Register<ILoginAppService, LoginAppService>();
-
+            container.Register<ILogAccessAppService, LogAccessAppService>();
 
         }
     }

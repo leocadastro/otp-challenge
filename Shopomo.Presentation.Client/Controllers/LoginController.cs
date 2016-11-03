@@ -1,4 +1,5 @@
 ﻿using Shopomo.Application.Interfaces;
+using Shopomo.OTP.Domain.Entities;
 using Shopomo.Presentation.Client.Models;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,13 @@ namespace Shopomo.Presentation.Client.Controllers
     {
         private readonly IUserAppService _userService;
         private readonly ILoginAppService _loginService;
+        private readonly ILogAccessAppService _logAccessService;
 
-        public LoginController(IUserAppService userService, ILoginAppService loginService)
+        public LoginController(IUserAppService userService, ILoginAppService loginService, ILogAccessAppService logAccessService)
         {
             _userService = userService;
             _loginService = loginService;
+            _logAccessService = logAccessService;
         }
 
         public ActionResult Index()
@@ -44,11 +47,31 @@ namespace Shopomo.Presentation.Client.Controllers
             if (user != null && !string.IsNullOrEmpty(loginViewModel.Password))
             {
                 result = _loginService.AuthenticateOTP(user.UserId.ToString(), time, loginViewModel.Password.Trim());
+
+                try
+                {
+                    await _logAccessService.AddAsync(MapLogAccess(user, result, time));
+                }
+                catch (Exception)
+                {
+                    //Implement log
+                }
+
                 return Json(result);
             }
 
             
             return Json(result);
+        }
+
+        private LogAccess MapLogAccess(User user, bool fail, DateTime time)
+        {
+            return new LogAccess()
+            {
+                Email = user.Email,
+                Time = time,
+                Fail = fail
+            };
         }
     }
 }
