@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopomo.Application", "Shop
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopomo.Presentation.Admin", "Shopomo.Presentation.Admin\Shopomo.Presentation.Admin.csproj", "{3D5F3EEF-52EF-410F-A2D0-C1964A8B8B4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopomo.Presentation.Client", "Shopomo.Presentation.Client\Shopomo.Presentation.Client.csproj", "{9518F55C-A135-4BEE-A9F2-8B8BD9012496}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{3D5F3EEF-52EF-410F-A2D0-C1964A8B8B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D5F3EEF-52EF-410F-A2D0-C1964A8B8B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D5F3EEF-52EF-410F-A2D0-C1964A8B8B4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9518F55C-A135-4BEE-A9F2-8B8BD9012496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9518F55C-A135-4BEE-A9F2-8B8BD9012496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9518F55C-A135-4BEE-A9F2-8B8BD9012496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9518F55C-A135-4BEE-A9F2-8B8BD9012496}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +71,6 @@ Global
 		{56027722-EFE5-414F-AE1D-032EA65F288F} = {D9EB274F-C8F3-4F1C-B10D-2468B5F0F2C4}
 		{78F3B759-5A73-4C0D-B6D0-0A1C357A5B37} = {A53324C0-42CD-4122-AF3D-3C6A99889267}
 		{3D5F3EEF-52EF-410F-A2D0-C1964A8B8B4B} = {B7B95BEC-112F-4789-8E1B-27243E1033CC}
+		{9518F55C-A135-4BEE-A9F2-8B8BD9012496} = {B7B95BEC-112F-4789-8E1B-27243E1033CC}
 	EndGlobalSection
 EndGlobal
