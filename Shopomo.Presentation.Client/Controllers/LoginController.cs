@@ -26,6 +26,15 @@ namespace Shopomo.Presentation.Client.Controllers
         }
 
         [HttpPost]
+        public ActionResult GeneratePassword(int userId)
+        {
+            var time = DateTime.Now;
+            string password = _loginService.GenerateOTP(userId.ToString(), time);
+
+            return Json(password);
+        }
+
+        [HttpPost]
         public async Task<ActionResult> Authenticate(LoginViewModel loginViewModel)
         {
             var result = false;
@@ -34,7 +43,7 @@ namespace Shopomo.Presentation.Client.Controllers
 
             if (user != null && !string.IsNullOrEmpty(loginViewModel.Password))
             {
-                result = _loginService.AuthenticateOTP(user.UserId.ToString(), time, loginViewModel.Password);
+                result = _loginService.AuthenticateOTP(user.UserId.ToString(), time, loginViewModel.Password.Trim());
                 return Json(result);
             }
 

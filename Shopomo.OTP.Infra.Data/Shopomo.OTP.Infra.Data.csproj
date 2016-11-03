@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Configuration\UserConfiguration.cs" />
     <Compile Include="Context\ShopomoContext.cs" />
+    <Compile Include="Helpers\OTPGenerator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />

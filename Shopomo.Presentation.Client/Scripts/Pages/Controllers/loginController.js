@@ -1,8 +1,9 @@
 ﻿'use strict';
 
-app.controller('loginController', function ($scope, $http) {
+app.controller('loginController', function ($scope, $http, $location) {
     $scope.form = {};
-
+    $scope.form.Email = $location.search().email;
+    
     $scope.submit = function () {
         $http({
             method: 'POST',

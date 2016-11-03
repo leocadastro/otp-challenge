@@ -17,6 +17,8 @@
                 <th>Email</th>
                 <th>Name</th>
                 <th>Actions</th>
+                <th>Last Password</th>
+                <th>Generated Date</th>
             </tr>
         </thead>
         <tbody>
@@ -25,8 +27,11 @@
                 <td>{{ user.Email }}</td>
                 <td>{{ user.Name}}</td>
                 <td>
-                    <button ng-click="generatePassword(user.UserId)" class="btn btn-primary btn-sm">Generate Password</button>
+                    <button ng-click="generateOTP(user.UserId, $index)" class="btn btn-primary btn-sm">Generate Password</button>
+                    <a href="/Login/#?email={{user.Email}}" class="btn btn-success btn-sm">Login</a>
                 </td>
+                <td>{{user.lastPassword}}</td>
+                <td>{{user.date | date:'yyyy-MM-dd HH:mm:ss'}}</td>
             </tr>
         </tbody>
     </table>
